@@ -43,12 +43,12 @@ resource "tfe_variable_set" "this" {
 # The following code block is used to create and manage the variables within the variable set at the project level.
 
 resource "tfe_variable" "this" {
-  for_each         = {for variable in var.variable_set_variables : variable.key => variable}
-  key              = each.value.key
-  value            = each.value.value
-  category         = each.value.category
-  description      = lookup(each.value, "description", null)
-  hcl              = lookup(each.value, "hcl", false)
-  sensitive        = lookup(each.value, "sensitive", false)
-  variable_set_id  = tfe_variable_set.this[0].id
+  for_each        = { for variable in var.variable_set_variables : variable.key => variable }
+  key             = each.value.key
+  value           = each.value.value
+  category        = each.value.category
+  description     = lookup(each.value, "description", null)
+  hcl             = lookup(each.value, "hcl", false)
+  sensitive       = lookup(each.value, "sensitive", false)
+  variable_set_id = tfe_variable_set.this[0].id
 }
