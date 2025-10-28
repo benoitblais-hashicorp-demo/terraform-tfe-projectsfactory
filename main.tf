@@ -50,5 +50,5 @@ resource "tfe_variable" "this" {
   description     = lookup(each.value, "description", null)
   hcl             = lookup(each.value, "hcl", false)
   sensitive       = lookup(each.value, "sensitive", false)
-  variable_set_id = tfe_variable_set.this[0].id
+  variable_set_id = tfe_variable_set.this.id
 }
