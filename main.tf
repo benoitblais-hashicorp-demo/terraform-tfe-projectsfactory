@@ -37,7 +37,7 @@ resource "tfe_variable_set" "this" {
   name              = lower(replace("${tfe_project.this.name}-hcp", "/\\W|_|\\s/", "-"))
   description       = "Variable set for project \"${tfe_project.this.name}\"."
   organization      = var.organization
-  parent_project_id = tfe_project.this[0].id
+  parent_project_id = tfe_project.this.id
 }
 
 # The following code block is used to create and manage the variables within the variable set at the project level.
