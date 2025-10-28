@@ -28,11 +28,6 @@ output "team_write_id" {
   value       = length(module.team_write) > 0 ? module.team_write[0].team_id : null
 }
 
-output "variables" {
-  description = "The HCP Terraform variables within the variable set at the project level."
-  value       = tfe_variable.this
-}
-
 output "variable_ids" {
   description = "The IDs of the HCP Terraform variables within the variable set at the project level."
   value       = [for v in tfe_variable.this : v.id]

@@ -200,9 +200,5 @@ Description: The HCP Terraform variable set at the project level.
 
 Description: The ID of the HCP Terraform variable set at the project level.
 
-### <a name="output_variables"></a> [variables](#output\_variables)
-
-Description: The HCP Terraform variables within the variable set at the project level.
-
 <!-- markdownlint-enable -->
 <!-- END_TF_DOCS -->
