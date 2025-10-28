@@ -30,6 +30,7 @@ to authenticate.
 ## Features
 
 Manages configuration and life-cycle of HCP Terraform resources:
+
 * Project
 * Variable Set
 * Variables
@@ -74,12 +75,6 @@ Version: 1.0.0
 
 The following input variables are required:
 
-### <a name="input_organization_name"></a> [organization\_name](#input\_organization\_name)
-
-Description: (Required) Name of the organization.
-
-Type: `string`
-
 ### <a name="input_project_name"></a> [project\_name](#input\_project\_name)
 
 Description: (Required) Name of the project.
@@ -89,6 +84,14 @@ Type: `string`
 ## Optional Inputs
 
 The following input variables are optional (have default values):
+
+### <a name="input_organization"></a> [organization](#input\_organization)
+
+Description: (Optional) Name of the organization.
+
+Type: `string`
+
+Default: `null`
 
 ### <a name="input_project_description"></a> [project\_description](#input\_project\_description)
 
