@@ -55,6 +55,8 @@ The following requirements are needed by this module:
 
 - <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.13.0)
 
+- <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) (~>0.70)
+
 ## Modules
 
 The following Modules are called:
@@ -160,7 +162,47 @@ The following resources are used by this module:
 
 ## Outputs
 
-No outputs.
+The following outputs are exported:
+
+### <a name="output_project"></a> [project](#output\_project)
+
+Description: The HCP Terraform project.
+
+### <a name="output_project_id"></a> [project\_id](#output\_project\_id)
+
+Description: The ID of the HCP Terraform project.
+
+### <a name="output_team_read"></a> [team\_read](#output\_team\_read)
+
+Description: The read access team.
+
+### <a name="output_team_read_id"></a> [team\_read\_id](#output\_team\_read\_id)
+
+Description: The ID of the read access team.
+
+### <a name="output_team_write"></a> [team\_write](#output\_team\_write)
+
+Description: The write access team.
+
+### <a name="output_team_write_id"></a> [team\_write\_id](#output\_team\_write\_id)
+
+Description: The ID of the write access team.
+
+### <a name="output_variable_ids"></a> [variable\_ids](#output\_variable\_ids)
+
+Description: The IDs of the HCP Terraform variables within the variable set at the project level.
+
+### <a name="output_variable_set"></a> [variable\_set](#output\_variable\_set)
+
+Description: The HCP Terraform variable set at the project level.
+
+### <a name="output_variable_set_id"></a> [variable\_set\_id](#output\_variable\_set\_id)
+
+Description: The ID of the HCP Terraform variable set at the project level.
+
+### <a name="output_variables"></a> [variables](#output\_variables)
+
+Description: The HCP Terraform variables within the variable set at the project level.
 
 <!-- markdownlint-enable -->
 <!-- END_TF_DOCS -->
