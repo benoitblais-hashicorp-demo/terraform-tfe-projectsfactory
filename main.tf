@@ -2,7 +2,7 @@
 
 resource "tfe_project" "this" {
   name         = var.project_name
-  organization = var.organization_name
+  organization = var.organization
   description  = var.project_description
   tags = merge(var.project_tags, {
     managed_by_terraform = "true"
@@ -15,8 +15,8 @@ module "team_write" {
   source         = "app.terraform.io/benoitblais-hashicorp/team/tfe"
   version        = "1.0.0"
   count          = var.sso_write_team_id != null ? 1 : 0
-  name           = lower(replace("${tfe_project.this[0].name}-write", "/\\W|_|\\s/", "-"))
-  organization   = var.organization_name
+  name           = lower(replace("${tfe_project.this.name}-write", "/\\W|_|\\s/", "-"))
+  organization   = var.organization
   project_access = "write"
 }
 
@@ -24,8 +24,8 @@ module "team_read" {
   source         = "app.terraform.io/benoitblais-hashicorp/team/tfe"
   version        = "1.0.0"
   count          = var.sso_read_team_id != null ? 1 : 0
-  name           = lower(replace("${tfe_project.this[0].name}-read", "/\\W|_|\\s/", "-"))
-  organization   = var.organization_name
+  name           = lower(replace("${tfe_project.this.name}-read", "/\\W|_|\\s/", "-"))
+  organization   = var.organization
   project_access = "read"
 }
 
@@ -34,9 +34,9 @@ module "team_read" {
 # NOTE: How can we configure the scope
 
 resource "tfe_variable_set" "this" {
-  name              = lower(replace("${tfe_project.this[0].name}-hcp", "/\\W|_|\\s/", "-"))
-  description       = "Variable set for project \"${tfe_project.this[0].name}\"."
-  organization      = var.organization_name
+  name              = lower(replace("${tfe_project.this.name}-hcp", "/\\W|_|\\s/", "-"))
+  description       = "Variable set for project \"${tfe_project.this.name}\"."
+  organization      = var.organization
   parent_project_id = tfe_project.this[0].id
 }
 

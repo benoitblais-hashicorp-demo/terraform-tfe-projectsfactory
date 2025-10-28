@@ -1,13 +1,18 @@
-variable "organization_name" {
-  description = "(Required) Name of the organization."
-  type        = string
-  nullable    = false
-}
-
 variable "project_name" {
   description = "(Required) Name of the project."
   type        = string
   nullable    = false
+}
+
+# It is required to specify the organization when creating a project.
+# The value is set to null by default to not force the user to provide a value.
+# The value is supposed to be provided through variable at the project level.
+
+variable "organization" {
+  description = "(Optional) Name of the organization."
+  type        = string
+  nullable    = true
+  default     = null
 }
 
 variable "project_description" {

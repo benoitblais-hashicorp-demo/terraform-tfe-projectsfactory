@@ -29,6 +29,7 @@ to authenticate.
 ## Features
 
 Manages configuration and life-cycle of HCP Terraform resources:
+
 * Project
 * Variable Set
 * Variables
