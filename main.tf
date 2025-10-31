@@ -18,6 +18,9 @@ module "team_write" {
   name           = lower(replace("${tfe_project.this.name}-write", "/\\W|_|\\s/", "-"))
   organization   = var.organization
   project_access = "write"
+  project_id     = tfe_project.this.id
+  project_name   = tfe_project.this.name
+  sso_team_id    = var.sso_write_team_id
 }
 
 module "team_read" {
@@ -27,6 +30,9 @@ module "team_read" {
   name           = lower(replace("${tfe_project.this.name}-read", "/\\W|_|\\s/", "-"))
   organization   = var.organization
   project_access = "read"
+  project_id     = tfe_project.this.id
+  project_name   = tfe_project.this.name
+  sso_team_id    = var.sso_read_team_id
 }
 
 # The following code block is used to create and manage the variable set at the project level that will own the variables required by the child workspaces.
