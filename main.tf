@@ -13,7 +13,7 @@ resource "tfe_project" "this" {
 
 module "team_write" {
   source         = "app.terraform.io/benoitblais-hashicorp/team/tfe"
-  version        = "1.0.0"
+  version        = "1.0.1"
   count          = var.sso_write_team_id != null ? 1 : 0
   name           = lower(replace("${tfe_project.this.name}-write", "/\\W|_|\\s/", "-"))
   organization   = var.organization
@@ -25,7 +25,7 @@ module "team_write" {
 
 module "team_read" {
   source         = "app.terraform.io/benoitblais-hashicorp/team/tfe"
-  version        = "1.0.0"
+  version        = "1.0.1"
   count          = var.sso_read_team_id != null ? 1 : 0
   name           = lower(replace("${tfe_project.this.name}-read", "/\\W|_|\\s/", "-"))
   organization   = var.organization

@@ -1,14 +1,14 @@
 <!-- BEGIN_TF_DOCS -->
 # Projects Factory Terraform Module
 
-Project Factory module which manages configuration and life-cycle
+Projects Factory module which manages configuration and life-cycle
 of your Terraform projects.
 
 ## Permissions
 
 ### HCP Terraform Permissions
 
-To manage the agent pool resources, provide a user token from an account with
+To manage resources, provide a user token from an account with
 appropriate permissions. This user should have the `Manage Projects`, `Manage Workspaces`,
 `Manage Teams`, `Manage Membership`, and `Manage Organization Access` permission.
 Alternatively, you can use a token from a team instead of a user token.
@@ -32,8 +32,8 @@ to authenticate.
 Manages configuration and life-cycle of HCP Terraform resources:
 
 * Project
-* Variable Set
-* Variables
+* Variable Sets
+  * Variables
 * Teams
 
 ## Usage example
@@ -65,13 +65,13 @@ The following Modules are called:
 
 Source: app.terraform.io/benoitblais-hashicorp/team/tfe
 
-Version: 1.0.0
+Version: 1.0.1
 
 ### <a name="module_team_write"></a> [team\_write](#module\_team\_write)
 
 Source: app.terraform.io/benoitblais-hashicorp/team/tfe
 
-Version: 1.0.0
+Version: 1.0.1
 
 ## Required Inputs
 
