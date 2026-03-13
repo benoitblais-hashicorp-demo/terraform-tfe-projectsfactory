@@ -65,13 +65,13 @@ The following Modules are called:
 
 Source: app.terraform.io/benoitblais-hashicorp/team/tfe
 
-Version: 1.0.1
+Version: 1.0.4
 
 ### <a name="module_team_write"></a> [team\_write](#module\_team\_write)
 
 Source: app.terraform.io/benoitblais-hashicorp/team/tfe
 
-Version: 1.0.1
+Version: 1.0.4
 
 ## Required Inputs
 
